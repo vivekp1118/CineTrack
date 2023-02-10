@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@600&display=swap');
+:root{
+    --fs-header-link:0.8rem;
+    --fs-logo:2.5rem;
+    --fs-logo-desc:1.4rem;
+    --fs-logo-container-dark: 0.875rem;
+    --fs-movie-name : 1.125rem;
+    --fs-movie-rating : 0.8rem;
+    --fs-movie-info : 0.75rem;
+    --fs-movie-desc : 0.875rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100vh;
+    width: 100%;
+    color: white;
+    font-family: 'Inter', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container{
+    width: 100%;
+    overflow: auto;
+    margin: 0 auto;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 200px auto;
+}
+header{
+    width: 100%;
+    font-family: 'Karla';
+    padding: 0 30px;
+    background: url('https://wallpapercave.com/wp/wp2411501.jpg') no-repeat center center;
+    text-transform: capitalize;
+    background-size:cover; 
+    position: relative;
+}
+.header-text{
+    max-width: 850px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 800;
+    margin: auto;
+}
+.header-text p {
+    font-size: var(--fs-header-link);
+}
+input{
+    border: none;
+    outline: none;
+}
+input:hover,
+input:focus,
+button:hover,
+button:focus{
+    outline: none;
+}
+button,
+i,.number,
+.my-watchlist,
+.go-to-search{
+    cursor: pointer;
+}
+.logo-container .font-dark{
+    font-weight: 700;
+    font-size: var(--fs-logo-container-dark);
+    line-height: 20px;
+    color: #363636;
+}
+button{
+    background: transparent;
+    width: 100%;
+    border: none;
+    border-left: 1px solid #D1D5DB; 
+    outline: none;
+}
+.search{
+    border: 1px solid black;
+    position: absolute;
+    display: flex;
+    padding: 0 20px;
+    height: 40px;
+    width: 350px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom:-20px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+}
+.container-movie{
+    color: black;
+    padding: 63px 44px;
+}
+.logo-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: var(--fs-logo);
+    color: #D1D5DB;
+    text-align: center;
+}
+.logo-container p{
+    font-size: var(--fs-logo-desc);
+    font-weight: 700;
+}
+.movie-card{
+    width: 100%;
+    height: 200px;
+    display:  flex;
+    flex-direction: row;
+    align-items: center;
+    gap:20px;
+    border-bottom: 1px solid #D1D5DB;
+}
+.movie-image{
+    width: 100px;
+    height: 160px;
+    min-width: 100px;
+    min-height: 160px;
+    /* flex: 100px 1; */
+    border-radius: 6px;
+    background-size: cover; 
+}
+.movie-details{
+    max-width: 400px;
+    width: 100%;
+    height: 157px;
+    padding: 12px 0; 
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+.movie-name{
+    font-weight: 500;
+    font-size: var(--fs-movie-name);
+    color: #000000;
+}
+.movie-rating{
+    line-height: 18px;
+    display: inline-block;
+    margin-left: 10px; 
+    font-size: var(--fs-movie-rating);
+}
+.movie-info{
+    display: flex;
+    gap:20px;
+    font-weight: 400;
+    font-size: var(--fs-movie-info);
+    color: #111827;    
+}
+
+.movie-descreption{
+    font-weight: 400;
+    font-size: var(--fs-movie-desc);
+    color: #6B7280;
+}
+.page-number{
+    display: flex;
+    gap:8px;
+    flex-wrap: wrap;
+    padding-top: 40px; 
+}
+.page-number span{
+    color: white;
+    max-width: 35px;
+    text-align: center;
+    background: #363636;
+    display: inline-block;
+    border-radius: 6px; 
+    flex: 25px 1;
+    border: 1px solid #D1D5DB;
+    padding: 5px 5px;
+}
+@media (min-width:768px)
+{   
+    :root{
+    --fs-header-link:1.8rem;
+    --fs-logo:3.5rem;
+    --fs-logo-desc:2rem;
+    --fs-logo-container-dark: 1rem;
+    --fs-movie-name : 1.4rem;
+    --fs-movie-rating : 0.9rem;
+    --fs-movie-info : 1rem;
+    --fs-movie-desc : 1.2rem;
+}
+    .header-text h1{
+        font-size: var(--fs-logo);
+    }
+    .container{
+        display: grid;
+        grid-template-rows: 300px auto; 
+    }
+    .movie-card{
+        height: 300px;
+        gap:30px;
+        justify-content: center;
+    }
+    .movie-image{
+        height: 230px;
+        width: 150px;
+    }
+    .movie-details{
+        margin: 0;
+        height: auto;
+    }
+}
