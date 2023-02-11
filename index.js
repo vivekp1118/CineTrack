@@ -59,7 +59,7 @@ if (getCurruntPage() === "movie") {
         }
         else if (e.target.dataset.page) {
             movieArray = []
-            const searchText = document.querySelector('.search-text').value
+            const searchText = document.querySelector('.search-text').value.trimEnd()
             getMovieId(searchText, parseInt(e.target.id))
         }
     })
