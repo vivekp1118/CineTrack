@@ -219,11 +219,12 @@ button{
     .search{
         width: 400px;
     }
-    .search-txet{
+    .search-text{
         width: 100%;
         font-size: 1.2rem;
     }
     .btn-search{
+        font-size: 1.1rem;
         max-width: 70px;
     }
     .movie-card{

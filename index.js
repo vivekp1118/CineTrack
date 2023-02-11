@@ -38,7 +38,7 @@ if (getCurruntPage() === "movie") {
 
     btnSearch.addEventListener('click', () => {
         movieArray = []
-        const searchText = document.querySelector('.search-txet').value.trimEnd()
+        const searchText = document.querySelector('.search-text').value.trimEnd()
         if (searchText == "") {
             setEmptyContainer("emptySearch")
         }
@@ -59,7 +59,7 @@ if (getCurruntPage() === "movie") {
         }
         else if (e.target.dataset.page) {
             movieArray = []
-            const searchText = document.querySelector('.search-txet').value
+            const searchText = document.querySelector('.search-text').value
             getMovieId(searchText, parseInt(e.target.id))
         }
     })
