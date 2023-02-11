@@ -28,6 +28,8 @@ html, body {
     height: 100vh;
     display: grid;
     grid-template-rows: 200px auto;
+    min-height: 0; 
+    min-width: 0;  
 }
 h1{
     font-size:1.5rem;
