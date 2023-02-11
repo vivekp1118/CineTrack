@@ -8,27 +8,6 @@ let totalMoviePages = ""
 if (checkLocalStorage) {
     watchlistArray = checkLocalStorage
 }
-function loadaing() {
-    movieContainerEl.innerHTML = `
-            <div class="logo-container">
-                      <img src="assert/load.svg" class="loading">
-            </div>
-          `
-}
-
-function getCurruntPage() {
-    return document.body.classList.contains('page-movie') ? "movie" : "watchlist"
-}
-function genratePageNumber(numOfPages) {
-    let pageNumHtml = Array(numOfPages).fill(0).map((item, index) => item = index + 1)
-    pageNumHtml = pageNumHtml.map(item => item =
-        `<span id="${item}" data-page=${item} class="number">${item}</span>`).join("")
-
-    movieContainerEl.innerHTML +=
-        `<div class="page-number">
-                            ${pageNumHtml}
-                        </div>`
-}
 
 // Movie Page
 if (getCurruntPage() === "movie") {
@@ -128,16 +107,42 @@ if (getCurruntPage() === "watchlist") {
 }
 
 // Utils
+function loadaing() {
+    movieContainerEl.innerHTML = `
+            <div class="logo-container">
+                      <img src="assert/load.svg" class="loading">
+            </div>
+          `
+}
+
+function getCurruntPage() {
+    return document.body.classList.contains('page-movie') ? "movie" : "watchlist"
+}
+
+function genratePageNumber(numOfPages) {
+    let pageNumHtml = Array(numOfPages).fill(0).map((item, index) => item = index + 1)
+    pageNumHtml = pageNumHtml.map(item => item =
+        `<span id="${item}" data-page=${item} class="number">${item}</span>`).join("")
+
+    movieContainerEl.innerHTML +=
+        `<div class="page-number">
+                            ${pageNumHtml}
+                        </div>`
+}
+
 function checkExistingElement(item) {
     return checkLocalStorage.filter(oldItem => oldItem.imdbID === item).length > 0 ? true : false
 }
+
 function removeArrayObject(itemId) {
     watchlistArray = watchlistArray.filter(item => item.imdbID != itemId)
     updateLocalStorage()
 }
+
 function updateLocalStorage() {
     localStorage.setItem("localWatchlistArray", JSON.stringify(watchlistArray))
 }
+
 function setEmptyContainer(message) {
     if (message === "watchlistContainer") {
         movieContainerEl.innerHTML = `
