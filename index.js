@@ -38,7 +38,7 @@ if (getCurruntPage() === "movie") {
 
     btnSearch.addEventListener('click', () => {
         movieArray = []
-        const searchText = document.querySelector('.search-txet').value
+        const searchText = document.querySelector('.search-txet').value.trimEnd()
         if (searchText == "") {
             setEmptyContainer("emptySearch")
         }
@@ -174,13 +174,14 @@ function setEmptyContainer(message) {
 
 function render(data) {
     let html = ""
-    let icon = `fa-circle-minus`
+    let icon = `fa-circle-plus`
 
     data.forEach(item => {
         if (checkLocalStorage && getCurruntPage() == "movie") {
             icon = checkExistingElement(item.imdbID) ? `fa-circle-check` : `fa-circle-plus`
-        } else {
-            icon = `fa-circle-plus`
+        }
+        else if(getCurruntPage()=="watchlist"){
+            icon = "fa-circle-minus"
         }
 
         html += `
